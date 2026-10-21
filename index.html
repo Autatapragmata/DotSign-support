@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dot Sign — App Support</title>
+<meta name="description" content="Help with Dot Sign, the dot-matrix subway countdown for iPhone and Mac. Contact: shufee.app@gmail.com">
+<meta name="theme-color" content="#FFBD73">
+<meta property="og:title" content="Dot Sign — App Support">
+<meta property="og:description" content="Help with Dot Sign, the dot-matrix subway countdown for iPhone and Mac. Contact: shufee.app@gmail.com">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
+<style>
+:root{--bg:#FFBD73;--ink:#23170A;--sub:#573A12;--shadow:0 18px 40px rgba(60,30,0,.22)}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+a:hover{opacity:.75}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:4px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
+.dots{display:block;width:100%;height:auto}
+.wrap{max-width:1376px;margin:0 auto;padding:28px 32px 64px;display:flex;flex-direction:column;gap:112px}
+.top{display:flex;flex-direction:column;gap:56px}
+.site-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px}
+.mark{font-size:22px;font-weight:850;font-stretch:125%;text-decoration:none;letter-spacing:-.01em}
+.nav{display:flex;gap:28px;font-size:17px;font-weight:600;flex-wrap:wrap}
+.nav a{text-decoration:none}
+.hero{display:flex;flex-direction:column;gap:clamp(16px,2vw,28px)}
+.lead{margin:0;font-size:clamp(18px,1.7vw,24px);font-weight:600;font-stretch:112%}
+.intro{display:flex;flex-wrap:wrap;gap:28px 64px;align-items:flex-end;justify-content:space-between;padding-top:28px;border-top:4px solid var(--ink)}
+.intro p{margin:0;flex:1 1 480px;max-width:40ch;font-size:clamp(20px,1.9vw,26px);line-height:1.4;font-weight:500}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;margin:0;font-weight:800;font-stretch:112%;font-size:18px;text-decoration:none;border-radius:4px}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.line{box-shadow:inset 0 0 0 2px var(--ink)}
+.block{display:flex;flex-direction:column;gap:36px}
+.ruled{padding-top:28px;border-top:4px solid var(--ink)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 40px}
+h2{margin:0;font-size:clamp(32px,3.6vw,52px);font-weight:850;font-stretch:125%;letter-spacing:-.02em;line-height:1}
+.sec-head p{margin:0;font-size:19px;color:var(--sub);max-width:38ch}
+.sign{background:#060605;border-radius:18px;padding:12px;box-shadow:var(--shadow)}
+.sign.round{border-radius:24px}
+.sign.led{background:#0A0806}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px 28px}
+.item{display:flex;flex-direction:column;gap:16px}
+.city{margin:0;font-size:34px;font-weight:850;font-stretch:125%;letter-spacing:-.02em}
+.h3{margin:0;font-size:22px;font-weight:800;font-stretch:112%}
+.note{margin:0;font-size:17px;line-height:1.5;color:var(--sub);max-width:38ch}
+/* devices */
+.devices{display:flex;flex-wrap:wrap;gap:56px 64px;align-items:flex-end;justify-content:center}
+.phone{flex:0 0 300px;width:300px;background:#16120E;border-radius:50px;padding:10px;box-shadow:var(--shadow)}
+.screen{background:#3D4A55;border-radius:41px;padding:50px 16px 14px;display:flex;flex-direction:column;gap:18px}
+.w{background:#060605;border-radius:20px;padding:9px}
+.icons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.icons.two{grid-template-columns:repeat(2,minmax(0,1fr));align-content:space-between}
+.icons span{aspect-ratio:1/1;border-radius:13px;background:rgba(255,255,255,.2)}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.dock{margin-top:28px;background:rgba(255,255,255,.14);border-radius:30px;padding:12px}
+.dock span{background:rgba(255,255,255,.24)}
+.mac{flex:1 1 520px;max-width:800px;min-width:0;display:flex;flex-direction:column;align-items:center}
+.display{width:100%;background:#16120E;border-radius:18px;padding:10px;box-shadow:var(--shadow)}
+.desk{position:relative;aspect-ratio:16/10;background:#3D4A55;border-radius:9px;overflow:hidden}
+.menubar{position:absolute;top:0;left:0;right:0;height:26px;background:rgba(14,14,16,.55);display:flex;align-items:center;justify-content:space-between;padding:0 12px}
+.menubar .g{display:flex;gap:14px;align-items:center}
+.bar{height:7px;border-radius:4px;background:rgba(255,255,255,.5)}
+.bar.hi{background:rgba(255,255,255,.75)}
+.mb-label{display:block;width:56px;padding:3px 5px;border-radius:5px;background:rgba(255,255,255,.16)}
+.desk-widget{position:absolute;top:46px;left:22px;width:29%;background:#060605;border-radius:16px;padding:8px;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.window{position:absolute;top:64px;right:30px;width:54%;height:64%;background:rgba(255,255,255,.1);border-radius:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 18px 40px rgba(0,0,0,.25)}
+.window div{height:30px;display:flex;align-items:center;gap:7px;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.1)}
+.window span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35)}
+.neck{width:13%;height:46px;background:#2A2018}
+.foot{width:30%;height:9px;background:#2A2018;border-radius:5px 5px 2px 2px}
+/* sizes */
+.sizes{display:flex;flex-wrap:wrap;gap:40px 36px;align-items:flex-end}
+.sizes .s{flex:0 1 200px}
+.sizes .m{flex:1 1 380px;max-width:440px}
+/* mac section */
+.split{display:flex;flex-wrap:wrap;gap:44px 72px;align-items:center}
+.split .text{flex:1 1 380px;display:flex;flex-direction:column;gap:18px;max-width:520px}
+.split .text p{margin:0;font-size:19px;line-height:1.5;color:var(--sub)}
+.split .vis{flex:1 1 460px;display:flex;flex-direction:column;align-items:flex-end;gap:10px;min-width:0}
+.strip{width:100%;max-width:560px;height:52px;background:#1E1E20;border-radius:14px 14px 6px 6px;display:flex;align-items:center;justify-content:flex-end;gap:20px;padding:0 20px}
+.strip .lbl{display:block;width:106px;padding:6px 8px;border-radius:6px;background:#3A3A3D}
+.pop{width:100%;max-width:420px;background:#2A2A2D;border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+.pop div{background:#060605;border-radius:10px;padding:10px}
+/* steps */
+.steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px 48px}
+.steps li{display:flex;flex-direction:column;gap:16px}
+.steps svg{width:46px}
+.steps h3{margin:0;font-size:24px;font-weight:800;font-stretch:112%}
+.steps p{margin:0;font-size:17px;line-height:1.55;color:var(--sub);max-width:36ch}
+/* footer */
+.site-foot{display:flex;flex-direction:column;gap:28px;padding-top:28px;border-top:4px solid var(--ink)}
+.site-foot .row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px}
+.site-foot p{margin:0;font-size:15px;line-height:1.6;color:var(--sub);max-width:72ch}
+/* support */
+.narrow{max-width:960px;gap:72px}
+.banner{max-width:760px}
+.contact{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between;padding-top:28px;border-top:4px solid var(--ink)}
+.contact .t{flex:1 1 420px;display:flex;flex-direction:column;gap:10px}
+.contact .big{margin:0;font-size:clamp(20px,2.2vw,26px);line-height:1.4;font-weight:500;max-width:34ch}
+.contact .small{margin:0;font-size:17px;line-height:1.55;color:var(--sub);max-width:52ch}
+.faq{display:flex;flex-direction:column}
+.faq h2{margin-bottom:28px}
+details{border-top:2px solid var(--ink);padding:20px 0}
+details:last-of-type{border-bottom:2px solid var(--ink)}
+summary{cursor:pointer;font-size:21px;font-weight:800;font-stretch:112%;list-style-position:outside}
+details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-width:62ch}
+.privacy{display:flex;flex-direction:column;gap:16px}
+.privacy p{margin:0;font-size:18px;line-height:1.6;max-width:62ch}
+@media (max-width:600px){.wrap{padding:20px 18px 48px;gap:80px}.phone{flex-basis:280px;width:280px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation=".22"/></filter></defs></svg>
+<div class="wrap narrow">
+<header class="site-head">
+<a class="mark" href="../DotSign/">Dot Sign</a>
+<nav class="nav" aria-label="Main">
+<a href="../DotSign/">Home</a>
+<a href="mailto:shufee.app@gmail.com">Email</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1 class="sr">Dot Sign App Support</h1>
+<div class="banner"><svg class="dots" viewBox="0 0 65 9" aria-hidden="true" focusable="false"><defs><pattern id="u19" width="1" height="1" patternUnits="userSpaceOnUse"><circle cx=".5" cy=".5" r="0.38" fill="#F4AE62"/></pattern></defs><rect width="65" height="9" fill="url(#u19)"/><path d="M2.5 1.5h0M3.5 1.5h0M4.5 1.5h0M7.5 1.5h0M8.5 1.5h0M9.5 1.5h0M10.5 1.5h0M13.5 1.5h0M14.5 1.5h0M15.5 1.5h0M16.5 1.5h0M24.5 1.5h0M25.5 1.5h0M26.5 1.5h0M27.5 1.5h0M29.5 1.5h0M33.5 1.5h0M35.5 1.5h0M36.5 1.5h0M37.5 1.5h0M38.5 1.5h0M41.5 1.5h0M42.5 1.5h0M43.5 1.5h0M44.5 1.5h0M48.5 1.5h0M49.5 1.5h0M50.5 1.5h0M53.5 1.5h0M54.5 1.5h0M55.5 1.5h0M56.5 1.5h0M59.5 1.5h0M60.5 1.5h0M61.5 1.5h0M62.5 1.5h0M63.5 1.5h0M1.5 2.5h0M5.5 2.5h0M7.5 2.5h0M11.5 2.5h0M13.5 2.5h0M17.5 2.5h0M23.5 2.5h0M29.5 2.5h0M33.5 2.5h0M35.5 2.5h0M39.5 2.5h0M41.5 2.5h0M45.5 2.5h0M47.5 2.5h0M51.5 2.5h0M53.5 2.5h0M57.5 2.5h0M61.5 2.5h0M1.5 3.5h0M5.5 3.5h0M7.5 3.5h0M11.5 3.5h0M13.5 3.5h0M17.5 3.5h0M23.5 3.5h0M29.5 3.5h0M33.5 3.5h0M35.5 3.5h0M39.5 3.5h0M41.5 3.5h0M45.5 3.5h0M47.5 3.5h0M51.5 3.5h0M53.5 3.5h0M57.5 3.5h0M61.5 3.5h0M1.5 4.5h0M2.5 4.5h0M3.5 4.5h0M4.5 4.5h0M5.5 4.5h0M7.5 4.5h0M8.5 4.5h0M9.5 4.5h0M10.5 4.5h0M13.5 4.5h0M14.5 4.5h0M15.5 4.5h0M16.5 4.5h0M24.5 4.5h0M25.5 4.5h0M26.5 4.5h0M29.5 4.5h0M33.5 4.5h0M35.5 4.5h0M36.5 4.5h0M37.5 4.5h0M38.5 4.5h0M41.5 4.5h0M42.5 4.5h0M43.5 4.5h0M44.5 4.5h0M47.5 4.5h0M51.5 4.5h0M53.5 4.5h0M54.5 4.5h0M55.5 4.5h0M56.5 4.5h0M61.5 4.5h0M1.5 5.5h0M5.5 5.5h0M7.5 5.5h0M13.5 5.5h0M27.5 5.5h0M29.5 5.5h0M33.5 5.5h0M35.5 5.5h0M41.5 5.5h0M47.5 5.5h0M51.5 5.5h0M53.5 5.5h0M55.5 5.5h0M61.5 5.5h0M1.5 6.5h0M5.5 6.5h0M7.5 6.5h0M13.5 6.5h0M27.5 6.5h0M29.5 6.5h0M33.5 6.5h0M35.5 6.5h0M41.5 6.5h0M47.5 6.5h0M51.5 6.5h0M53.5 6.5h0M56.5 6.5h0M61.5 6.5h0M1.5 7.5h0M5.5 7.5h0M7.5 7.5h0M13.5 7.5h0M23.5 7.5h0M24.5 7.5h0M25.5 7.5h0M26.5 7.5h0M30.5 7.5h0M31.5 7.5h0M32.5 7.5h0M35.5 7.5h0M41.5 7.5h0M48.5 7.5h0M49.5 7.5h0M50.5 7.5h0M53.5 7.5h0M57.5 7.5h0M61.5 7.5h0" stroke="#23170A" stroke-width="0.76" stroke-linecap="round" fill="none"/></svg></div>
+<div class="contact">
+<div class="t">
+<p class="big">Something not right on your sign? Write to me and I'll help.</p>
+<p class="small">It helps to include your city, the station, and what the sign showed. A screenshot is even better.</p>
+</div>
+<a class="btn solid" href="mailto:shufee.app@gmail.com?subject=Dot%20Sign%20support">shufee.app@gmail.com</a>
+</div>
+</section>
+
+<section class="faq">
+<h2>Common questions</h2>
+<details open><summary>The widget says OPEN APP TO ALLOW LOCATION.</summary><p>Open Dot Sign and allow location While Using the App. The widget can only find your nearest station once the app has that permission. If you'd rather not share location, pin a station instead.</p></details>
+<details><summary>The times don't change every minute.</summary><p>iOS lets a widget fetch new times about every ten minutes. In between, the minutes count down on their own and trains that have left drop off. Opening the app always shows the latest times.</p></details>
+<details><summary>How do I always show the same station?</summary><p>In the app, tap one of the nearby stations, or search for one, to pin it. On the Home Screen, touch and hold the widget, choose Edit Widget, and pick a station instead of Nearest Station.</p></details>
+<details><summary>Which cities and lines does it cover?</summary><p>New York City Subway and PATH, the Chicago ‘L’, and LA Metro Rail’s A, B, C, D, E and K Lines. Dot Sign shows the systems where you are. You can switch systems on or off under Transit Systems in the app.</p></details>
+<details><summary>My Mac widget says OPEN DOT SIGN.</summary><p>On the Mac, widgets get your nearest station from the menu bar app. Open Dot Sign and leave it running. Turn on Launch at login in its Settings so it’s always there.</p></details>
+<details><summary>A time looks wrong.</summary><p>Times come straight from each agency’s live feed, so they can shift during delays or service changes. If one looks off for more than a few minutes, email me the station and the time you saw it.</p></details>
+</section>
+
+<section class="privacy" id="privacy">
+<h2>Privacy</h2>
+<p>Dot Sign has no accounts, ads or analytics. Your location stays on your device and is used only to find the nearest station. To get arrival times, the app asks each transit agency's public feed about the stations you're viewing. Nothing is collected about you.</p>
+</section>
+
+<footer class="site-foot">
+<div class="row">
+<a class="mark" href="../DotSign/">Dot Sign</a>
+<a href="mailto:shufee.app@gmail.com" style="font-size:17px;font-weight:600;text-decoration:none">shufee.app@gmail.com</a>
+</div>
+<p>Arrival times come from the MTA, CTA Train Tracker and LA Metro. Dot Sign isn't affiliated with any transit agency.</p>
+</footer>
+</div>
+</body>
+</html>
