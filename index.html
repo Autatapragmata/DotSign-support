@@ -113,6 +113,13 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
 .privacy{display:flex;flex-direction:column;gap:16px}
 .privacy p{margin:0;font-size:18px;line-height:1.6;max-width:62ch}
 @media (max-width:600px){.wrap{padding:20px 18px 48px;gap:80px}.phone{flex-basis:280px;width:280px}}
+/* live signs */
+.js svg[data-kind] .lit circle{transition:opacity .3s ease}
+.js .hero svg[data-kind] .lit circle{transition:opacity .8s ease}
+.js svg.pre .lit circle,.js svg.dim .lit circle,.js .lit .w{opacity:0}
+.js .lit .blink{animation:ds-blink 1.1s linear infinite}
+@keyframes ds-blink{0%,54%{opacity:1}55%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.js .lit .blink{animation:none}.js svg[data-kind] .lit circle{transition:none}}
 </style>
 </head>
 <body>
@@ -128,7 +135,7 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
 
 <section class="hero">
 <h1 class="sr">Dot Sign App Support</h1>
-<div class="banner"><svg class="dots" viewBox="0 0 65 9" aria-hidden="true" focusable="false"><defs><pattern id="u19" width="1" height="1" patternUnits="userSpaceOnUse"><circle cx=".5" cy=".5" r="0.38" fill="#F4AE62"/></pattern></defs><rect width="65" height="9" fill="url(#u19)"/><path d="M2.5 1.5h0M3.5 1.5h0M4.5 1.5h0M7.5 1.5h0M8.5 1.5h0M9.5 1.5h0M10.5 1.5h0M13.5 1.5h0M14.5 1.5h0M15.5 1.5h0M16.5 1.5h0M24.5 1.5h0M25.5 1.5h0M26.5 1.5h0M27.5 1.5h0M29.5 1.5h0M33.5 1.5h0M35.5 1.5h0M36.5 1.5h0M37.5 1.5h0M38.5 1.5h0M41.5 1.5h0M42.5 1.5h0M43.5 1.5h0M44.5 1.5h0M48.5 1.5h0M49.5 1.5h0M50.5 1.5h0M53.5 1.5h0M54.5 1.5h0M55.5 1.5h0M56.5 1.5h0M59.5 1.5h0M60.5 1.5h0M61.5 1.5h0M62.5 1.5h0M63.5 1.5h0M1.5 2.5h0M5.5 2.5h0M7.5 2.5h0M11.5 2.5h0M13.5 2.5h0M17.5 2.5h0M23.5 2.5h0M29.5 2.5h0M33.5 2.5h0M35.5 2.5h0M39.5 2.5h0M41.5 2.5h0M45.5 2.5h0M47.5 2.5h0M51.5 2.5h0M53.5 2.5h0M57.5 2.5h0M61.5 2.5h0M1.5 3.5h0M5.5 3.5h0M7.5 3.5h0M11.5 3.5h0M13.5 3.5h0M17.5 3.5h0M23.5 3.5h0M29.5 3.5h0M33.5 3.5h0M35.5 3.5h0M39.5 3.5h0M41.5 3.5h0M45.5 3.5h0M47.5 3.5h0M51.5 3.5h0M53.5 3.5h0M57.5 3.5h0M61.5 3.5h0M1.5 4.5h0M2.5 4.5h0M3.5 4.5h0M4.5 4.5h0M5.5 4.5h0M7.5 4.5h0M8.5 4.5h0M9.5 4.5h0M10.5 4.5h0M13.5 4.5h0M14.5 4.5h0M15.5 4.5h0M16.5 4.5h0M24.5 4.5h0M25.5 4.5h0M26.5 4.5h0M29.5 4.5h0M33.5 4.5h0M35.5 4.5h0M36.5 4.5h0M37.5 4.5h0M38.5 4.5h0M41.5 4.5h0M42.5 4.5h0M43.5 4.5h0M44.5 4.5h0M47.5 4.5h0M51.5 4.5h0M53.5 4.5h0M54.5 4.5h0M55.5 4.5h0M56.5 4.5h0M61.5 4.5h0M1.5 5.5h0M5.5 5.5h0M7.5 5.5h0M13.5 5.5h0M27.5 5.5h0M29.5 5.5h0M33.5 5.5h0M35.5 5.5h0M41.5 5.5h0M47.5 5.5h0M51.5 5.5h0M53.5 5.5h0M55.5 5.5h0M61.5 5.5h0M1.5 6.5h0M5.5 6.5h0M7.5 6.5h0M13.5 6.5h0M27.5 6.5h0M29.5 6.5h0M33.5 6.5h0M35.5 6.5h0M41.5 6.5h0M47.5 6.5h0M51.5 6.5h0M53.5 6.5h0M56.5 6.5h0M61.5 6.5h0M1.5 7.5h0M5.5 7.5h0M7.5 7.5h0M13.5 7.5h0M23.5 7.5h0M24.5 7.5h0M25.5 7.5h0M26.5 7.5h0M30.5 7.5h0M31.5 7.5h0M32.5 7.5h0M35.5 7.5h0M41.5 7.5h0M48.5 7.5h0M49.5 7.5h0M50.5 7.5h0M53.5 7.5h0M57.5 7.5h0M61.5 7.5h0" stroke="#23170A" stroke-width="0.76" stroke-linecap="round" fill="none"/></svg></div>
+<div class="banner"><svg class="dots" viewBox="0 0 65 9" aria-hidden="true" focusable="false" data-kind="text" data-lines="APP SUPPORT" data-x="1" data-y="1" data-step="10" data-color="#23170A" data-i="0"><defs><pattern id="u19" width="1" height="1" patternUnits="userSpaceOnUse"><circle cx=".5" cy=".5" r="0.38" fill="#F4AE62"/></pattern></defs><rect width="65" height="9" fill="url(#u19)"/><path d="M2.5 1.5h0M3.5 1.5h0M4.5 1.5h0M7.5 1.5h0M8.5 1.5h0M9.5 1.5h0M10.5 1.5h0M13.5 1.5h0M14.5 1.5h0M15.5 1.5h0M16.5 1.5h0M24.5 1.5h0M25.5 1.5h0M26.5 1.5h0M27.5 1.5h0M29.5 1.5h0M33.5 1.5h0M35.5 1.5h0M36.5 1.5h0M37.5 1.5h0M38.5 1.5h0M41.5 1.5h0M42.5 1.5h0M43.5 1.5h0M44.5 1.5h0M48.5 1.5h0M49.5 1.5h0M50.5 1.5h0M53.5 1.5h0M54.5 1.5h0M55.5 1.5h0M56.5 1.5h0M59.5 1.5h0M60.5 1.5h0M61.5 1.5h0M62.5 1.5h0M63.5 1.5h0M1.5 2.5h0M5.5 2.5h0M7.5 2.5h0M11.5 2.5h0M13.5 2.5h0M17.5 2.5h0M23.5 2.5h0M29.5 2.5h0M33.5 2.5h0M35.5 2.5h0M39.5 2.5h0M41.5 2.5h0M45.5 2.5h0M47.5 2.5h0M51.5 2.5h0M53.5 2.5h0M57.5 2.5h0M61.5 2.5h0M1.5 3.5h0M5.5 3.5h0M7.5 3.5h0M11.5 3.5h0M13.5 3.5h0M17.5 3.5h0M23.5 3.5h0M29.5 3.5h0M33.5 3.5h0M35.5 3.5h0M39.5 3.5h0M41.5 3.5h0M45.5 3.5h0M47.5 3.5h0M51.5 3.5h0M53.5 3.5h0M57.5 3.5h0M61.5 3.5h0M1.5 4.5h0M2.5 4.5h0M3.5 4.5h0M4.5 4.5h0M5.5 4.5h0M7.5 4.5h0M8.5 4.5h0M9.5 4.5h0M10.5 4.5h0M13.5 4.5h0M14.5 4.5h0M15.5 4.5h0M16.5 4.5h0M24.5 4.5h0M25.5 4.5h0M26.5 4.5h0M29.5 4.5h0M33.5 4.5h0M35.5 4.5h0M36.5 4.5h0M37.5 4.5h0M38.5 4.5h0M41.5 4.5h0M42.5 4.5h0M43.5 4.5h0M44.5 4.5h0M47.5 4.5h0M51.5 4.5h0M53.5 4.5h0M54.5 4.5h0M55.5 4.5h0M56.5 4.5h0M61.5 4.5h0M1.5 5.5h0M5.5 5.5h0M7.5 5.5h0M13.5 5.5h0M27.5 5.5h0M29.5 5.5h0M33.5 5.5h0M35.5 5.5h0M41.5 5.5h0M47.5 5.5h0M51.5 5.5h0M53.5 5.5h0M55.5 5.5h0M61.5 5.5h0M1.5 6.5h0M5.5 6.5h0M7.5 6.5h0M13.5 6.5h0M27.5 6.5h0M29.5 6.5h0M33.5 6.5h0M35.5 6.5h0M41.5 6.5h0M47.5 6.5h0M51.5 6.5h0M53.5 6.5h0M56.5 6.5h0M61.5 6.5h0M1.5 7.5h0M5.5 7.5h0M7.5 7.5h0M13.5 7.5h0M23.5 7.5h0M24.5 7.5h0M25.5 7.5h0M26.5 7.5h0M30.5 7.5h0M31.5 7.5h0M32.5 7.5h0M35.5 7.5h0M41.5 7.5h0M48.5 7.5h0M49.5 7.5h0M50.5 7.5h0M53.5 7.5h0M57.5 7.5h0M61.5 7.5h0" stroke="#23170A" stroke-width="0.76" stroke-linecap="round" fill="none"/></svg></div>
 <div class="contact">
 <div class="t">
 <p class="big">Something not right on your sign? Write to me and I'll help.</p>
@@ -161,5 +168,193 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
 <p>Arrival times come from the MTA, CTA Train Tracker and LA Metro. Dot Sign isn't affiliated with any transit agency.</p>
 </footer>
 </div>
+<script>
+(() => {
+  const RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const RAW = {" ": "000,000,000,000,000,000,000", "A": "01110,10001,10001,11111,10001,10001,10001", "B": "11110,10001,10001,11110,10001,10001,11110", "C": "01110,10001,10000,10000,10000,10001,01110", "D": "11110,10001,10001,10001,10001,10001,11110", "E": "11111,10000,10000,11110,10000,10000,11111", "F": "11111,10000,10000,11110,10000,10000,10000", "G": "01110,10001,10000,10111,10001,10001,01111", "H": "10001,10001,10001,11111,10001,10001,10001", "I": "111,010,010,010,010,010,111", "K": "10001,10010,10100,11000,10100,10010,10001", "L": "10000,10000,10000,10000,10000,10000,11111", "M": "10001,11011,10101,10101,10001,10001,10001", "N": "10001,10001,11001,10101,10011,10001,10001", "O": "01110,10001,10001,10001,10001,10001,01110", "P": "11110,10001,10001,11110,10000,10000,10000", "Q": "01110,10001,10001,10001,10101,10010,01101", "R": "11110,10001,10001,11110,10100,10010,10001", "S": "01111,10000,10000,01110,00001,00001,11110", "T": "11111,00100,00100,00100,00100,00100,00100", "U": "10001,10001,10001,10001,10001,10001,01110", "W": "10001,10001,10001,10101,10101,10101,01010", "Y": "10001,10001,01010,00100,00100,00100,00100", "J": "00111,00010,00010,00010,00010,10010,01100", "V": "10001,10001,10001,10001,10001,01010,00100", "X": "10001,10001,01010,00100,01010,10001,10001", "Z": "11111,00001,00010,00100,01000,10000,11111", "0": "01110,10001,10011,10101,11001,10001,01110", "8": "01110,10001,10001,01110,10001,10001,01110", "1": "00100,01100,00100,00100,00100,00100,01110", "2": "01110,10001,00001,00010,00100,01000,11111", "3": "11111,00010,00100,00010,00001,10001,01110", "4": "00010,00110,01010,10010,11111,00010,00010", "5": "11111,10000,11110,00001,00001,10001,01110", "6": "00110,01000,10000,11110,10001,10001,01110", "7": "11111,00001,00010,00100,01000,01000,01000", "9": "01110,10001,10001,01111,00001,00010,01100", ".": "0,0,0,0,0,0,1", "'": "1,1,0,0,0,0,0", "/": "00001,00010,00010,00100,01000,01000,10000"}, LINES = {"4": ["#00933C", "#FFFFFF", "4"], "5": ["#00933C", "#FFFFFF", "5"], "6": ["#00933C", "#FFFFFF", "6"], "N": ["#FCCC0A", "#141414", "N"], "Q": ["#FCCC0A", "#141414", "Q"], "R": ["#FCCC0A", "#141414", "R"], "W": ["#FCCC0A", "#141414", "W"], "Blue": ["#00A1DE", "", ""], "Brown": ["#62361B", "", ""], "Green": ["#009B3A", "", ""], "Orange": ["#F9461C", "", ""], "Pink": ["#E27EA6", "", ""], "Purple": ["#522398", "", ""], "LA-A": ["#0072BC", "#FFFFFF", "A"], "LA-B": ["#E3131B", "#FFFFFF", "B"], "LA-D": ["#A05DA5", "#FFFFFF", "D"], "LA-E": ["#FDB913", "#141414", "E"]}, FEEDS = {"ny-up": {"rows": [["4", "WOODLAWN", 1], ["Q", "96 ST", 5]], "queue": [["6", "PELHAM BAY"], ["N", "ASTORIA"], ["5", "EASTCHESTER"], ["R", "FOREST HILLS"], ["4", "WOODLAWN"], ["W", "ASTORIA"], ["Q", "96 ST"]]}, "ny-down": {"rows": [["R", "BAY RIDGE", 2], ["4", "CROWN HTS", 6]], "queue": [["6", "BROOKLYN BR"], ["Q", "CONEY ISLAND"], ["5", "FLATBUSH AV"], ["W", "WHITEHALL"], ["N", "CONEY ISLAND"], ["R", "BAY RIDGE"], ["4", "CROWN HTS"]]}, "chi": {"rows": [["Blue", "O'HARE", 2], ["Brown", "KIMBALL", 5]], "queue": [["Green", "HARLEM"], ["Orange", "MIDWAY"], ["Pink", "54TH/CERMAK"], ["Blue", "O'HARE"], ["Purple", "LINDEN"], ["Brown", "KIMBALL"]]}, "la": {"rows": [["LA-D", "LA CIENEGA", 3], ["LA-E", "SANTA MONICA", 8]], "queue": [["LA-B", "N HOLLYWOOD"], ["LA-A", "LONG BEACH"], ["LA-E", "ATLANTIC"], ["LA-D", "LA CIENEGA"], ["LA-E", "SANTA MONICA"], ["LA-A", "LONG BEACH"]]}};
+  const W = '#F4F0E6', DIM = '#6F6B63', RULE = '#2E2C29', AMB = '#FFA31A', AMB_RULE = '#382406', MB_DIM = '#B9B5AD';
+  const TICK = 6500;
+  const G = {}; for (const k in RAW) G[k] = RAW[k].split(',');
+  const gl = c => G[c] || G[' '];
+  const width = t => { t = String(t).toUpperCase(); let w = 0; for (let i = 0; i < t.length; i++) w += gl(t[i])[0].length + (i ? 1 : 0); return w; };
+
+  function board(w, h) {
+    const px = new Map();
+    const b = {
+      w, h, px,
+      set(x, y, c, tag) { if (x >= 0 && y >= 0 && x < w && y < h) px.set(y * w + x, { x, y, c, tag: tag || '' }); },
+      text(t, x, y, c, s, tag) {
+        s = s || 1; t = String(t).toUpperCase(); let cx = x;
+        for (const ch of t) {
+          const g = gl(ch);
+          for (let r = 0; r < 7; r++) for (let q = 0; q < g[r].length; q++) if (g[r][q] === '1')
+            for (let a = 0; a < s; a++) for (let bb = 0; bb < s; bb++) b.set(cx + q * s + bb, y + r * s + a, c, tag);
+          cx += (g[0].length + 1) * s;
+        }
+      },
+      bullet(x, y, c, l, lc, tag) {
+        for (let r = 0; r < 11; r++) for (let q = 0; q < 11; q++) if ((q - 5) * (q - 5) + (r - 5) * (r - 5) <= 30) b.set(x + q, y + r, c, tag);
+        if (l) b.text(l, x + 3, y + 2, lc, 1, tag);
+      },
+      hline(x0, x1, y, c) { for (let x = x0; x <= x1; x++) b.set(x, y, c); }
+    };
+    return b;
+  }
+
+  // ---- feeds: minutes tick down; at 0 the train is arriving (blinks); next tick it leaves
+  const state = {};
+  for (const k in FEEDS) state[k] = { rows: FEEDS[k].rows.map(r => ({ k: r[0], d: r[1], m: r[2] })), q: FEEDS[k].queue, qi: 0, departed: false };
+  function tick(key) {
+    const s = state[key];
+    s.departed = false;
+    if (s.rows[0].m === 0) {
+      s.rows.shift();
+      const last = s.rows[s.rows.length - 1];
+      const nx = s.q[s.qi++ % s.q.length];
+      let m = Math.min(9, last.m + 2 + Math.floor(Math.random() * 3));
+      if (m <= last.m) m = Math.min(9, last.m + 1);
+      s.rows.push({ k: nx[0], d: nx[1], m });
+      s.departed = true;
+    } else {
+      s.rows.forEach(r => { if (r.m > 0) r.m--; });
+    }
+  }
+
+  // ---- drawing
+  function rowDraw(b, r, y, mono, tc, fk) {
+    const L = LINES[r.k];
+    b.bullet(3, y, mono ? AMB : L[0], mono ? '' : L[2], L[1], 'r:' + fk);
+    b.text(r.d, 17, y + 2, tc, 1, 'r:' + fk);
+    const m = String(r.m);
+    b.text(m, 93 - width(m), y + 2, tc, 1, (r.m === 0 ? 'b:' : 'r:') + fk);
+  }
+  const R = {
+    medium(el) {
+      const mono = el.dataset.mono === '1', tc = mono ? AMB : W, fk = el.dataset.feed, s = state[fk];
+      const b = board(96, 44);
+      b.text(el.dataset.station, 3, 3, tc);
+      b.hline(3, 92, 13, mono ? AMB_RULE : RULE);
+      rowDraw(b, s.rows[0], 17, mono, tc, fk);
+      rowDraw(b, s.rows[1], 30, mono, tc, fk);
+      return b;
+    },
+    small(el) {
+      const fk = el.dataset.feed, r = state[fk].rows[0], L = LINES[r.k];
+      const b = board(44, 44);
+      b.bullet(3, 3, L[0], L[2], L[1], 'r:' + fk);
+      b.text(String(r.m), 3, 19, W, 3, (r.m === 0 ? 'b:' : 'r:') + fk);
+      b.text('MIN', 41 - width('MIN'), 33, DIM, 1, 'r:' + fk);
+      return b;
+    },
+    large(el) {
+      const up = el.dataset.feed, dn = el.dataset.feed2, u = state[up].rows, d = state[dn].rows;
+      const b = board(96, 92);
+      b.text(el.dataset.station, 3, 3, W);
+      b.hline(3, 92, 13, RULE);
+      b.text('UPTOWN', 3, 17, DIM);
+      b.hline(3, 92, 54, RULE);
+      b.text('DOWNTOWN', 3, 58, DIM);
+      rowDraw(b, u[0], 27, false, W, up); rowDraw(b, u[1], 40, false, W, up);
+      rowDraw(b, d[0], 68, false, W, dn); rowDraw(b, d[1], 81, false, W, dn);
+      return b;
+    },
+    menubar(el) {
+      const fk = el.dataset.feed, r = state[fk].rows[0], L = LINES[r.k];
+      const b = board(38, 11);
+      b.bullet(0, 0, L[0], L[2], L[1], 'r:' + fk);
+      b.text(String(r.m), 15, 2, W, 1, (r.m === 0 ? 'b:' : 'r:') + fk);
+      b.text('MIN', 23, 2, MB_DIM, 1, 'r:' + fk);
+      return b;
+    },
+    text(el) {
+      const vb = el.viewBox.baseVal, b = board(vb.width, vb.height), d = el.dataset;
+      d.lines.split('|').forEach((line, n) => b.text(line, +d.x, +d.y + n * +d.step, d.color));
+      return b;
+    }
+  };
+
+  const NS = 'http://www.w3.org/2000/svg';
+  let uid = 0;
+  function layer(el) {
+    let g = el.querySelector('g.lit');
+    if (g) return g;
+    el.querySelectorAll(':scope > path').forEach(p => p.remove());
+    g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'lit');
+    if (el.dataset.glow === '1') {
+      g.id = 'ds-lit-' + (++uid);
+      const u = document.createElementNS(NS, 'use');
+      u.setAttribute('href', '#' + g.id);
+      u.setAttribute('filter', 'url(#glow)');
+      u.setAttribute('opacity', '.55');
+      el.appendChild(u);
+    }
+    el.appendChild(g);
+    return g;
+  }
+  // opts.boot: seconds to scatter the dots over; opts.base: extra delay; opts.wipe: feed key whose rows wipe in
+  function paint(el, opts) {
+    const b = R[el.dataset.kind](el), g = layer(el);
+    let on = '', blink = '';
+    for (const p of b.px.values()) {
+      let a = '';
+      if (opts && opts.boot) a = ` style="transition-delay:${((opts.base || 0) + Math.random() * opts.boot).toFixed(2)}s"`;
+      else if (opts && opts.wipe && p.tag.endsWith(':' + opts.wipe)) a = ` class="w" style="transition-delay:${(p.x / b.w * 0.5).toFixed(2)}s"`;
+      const c = `<circle cx="${p.x + .5}" cy="${p.y + .5}" r=".38" fill="${p.c}"${a}/>`;
+      if (p.tag.startsWith('b:')) blink += c; else on += c;
+    }
+    g.innerHTML = on + (blink ? `<g class="blink">${blink}</g>` : '');
+    if (opts && opts.wipe) requestAnimationFrame(() => requestAnimationFrame(() => g.querySelectorAll('.w').forEach(c => c.classList.remove('w'))));
+  }
+
+  document.documentElement.classList.add('js');
+  const els = [...document.querySelectorAll('svg[data-kind]')];
+  els.forEach(el => { if (!RM) el.classList.add('pre'); paint(el); });
+
+  function boot(el) {
+    if (el._booted) return;
+    el._booted = true;
+    if (RM) return;
+    const hero = el.closest('.hero');
+    paint(el, { boot: hero ? 1.4 : 0.9, base: hero ? 0.15 : (+el.dataset.i ? (+el.dataset.i - 1) * 0.35 : 0) });
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('pre')));
+  }
+  if (RM || !('IntersectionObserver' in window)) els.forEach(el => { el._booted = true; el.classList.remove('pre'); });
+  else {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { boot(e.target); io.unobserve(e.target); } }), { threshold: 0.35 });
+    els.forEach(el => io.observe(el));
+  }
+
+  // ---- live countdown, staggered per feed
+  function update(fk) {
+    const s = state[fk];
+    els.forEach(el => {
+      if (el.dataset.feed !== fk && el.dataset.feed2 !== fk) return;
+      paint(el, !RM && s.departed && el._booted ? { wipe: fk } : null);
+    });
+  }
+  Object.keys(state).forEach((fk, i) => {
+    setTimeout(() => {
+      const run = () => { if (!document.hidden) { tick(fk); update(fk); } };
+      run();
+      setInterval(run, TICK);
+    }, 3000 + i * 1700);
+  });
+
+  // ---- the hero fades out and back in, gently, every so often
+  if (!RM) {
+    const heroes = els.filter(el => el.closest('.hero'));
+    const visible = el => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; };
+    const scatter = el => el.querySelectorAll('.lit circle').forEach(c => { c.style.transitionDelay = (Math.random() * 1.2).toFixed(2) + 's'; });
+    setInterval(() => {
+      heroes.forEach(el => {
+        if (document.hidden || !el._booted || !visible(el)) return;
+        scatter(el); el.classList.add('dim');
+        setTimeout(() => { scatter(el); el.classList.remove('dim'); }, 2400);
+      });
+    }, 11000);
+  }
+})();
+</script>
 </body>
 </html>
