@@ -15,6 +15,7 @@
 <style>
 :root{--bg:#FFBD73;--ink:#23170A;--sub:#573A12;--shadow:0 18px 40px rgba(60,30,0,.22)}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:inherit}
@@ -22,7 +23,7 @@ a:hover{opacity:.75}
 a:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:4px;border-radius:2px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
 .dots{display:block;width:100%;height:auto}
-.wrap{max-width:1376px;margin:0 auto;padding:28px 32px 64px;display:flex;flex-direction:column;gap:112px}
+.wrap{overflow-x:clip;max-width:1376px;margin:0 auto;padding:28px 32px 64px;display:flex;flex-direction:column;gap:112px}
 .top{display:flex;flex-direction:column;gap:56px}
 .site-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px}
 .mark{font-size:22px;font-weight:850;font-stretch:125%;text-decoration:none;letter-spacing:-.01em}
@@ -124,6 +125,31 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
 .privacy{display:flex;flex-direction:column;gap:16px}
 .privacy p{margin:0;font-size:18px;line-height:1.6;max-width:62ch}
 @media (max-width:600px){.wrap{padding:20px 18px 48px;gap:80px}.phone{flex-basis:280px;width:280px}}
+/* try it yourself */
+.try{display:flex;flex-wrap:wrap;gap:40px 72px;align-items:center}
+.try-controls{flex:1 1 320px;min-width:0;max-width:440px;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.field{display:flex;flex-direction:column;gap:10px;width:100%}
+.field span,.seg legend{font-size:17px;font-weight:700}
+.field select{font:inherit;font-size:18px;font-weight:600;color:var(--ink);min-height:50px;padding:0 14px;border:2px solid var(--ink);border-radius:4px;background:rgba(255,255,255,.28);max-width:100%}
+.field select:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.seg{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.seg legend{padding:0;margin-bottom:10px}
+.seg label{position:relative;display:inline-flex}
+.seg input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.seg span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;box-shadow:inset 0 0 0 2px var(--ink);font-weight:700;font-stretch:112%}
+.seg input:checked+span{background:var(--ink);color:var(--bg)}
+.seg input:focus-visible+span{outline:3px solid var(--ink);outline-offset:3px}
+.seg input:disabled+span{opacity:.35}
+.seg input:disabled{cursor:default}
+#try-next{font:inherit;font-size:18px;font-weight:800;font-stretch:112%;background:none;border:0;color:var(--ink);cursor:pointer}
+#try-next:hover{opacity:.75}
+#try-next:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.try-stage{flex:1 1 440px;min-width:0;min-height:480px;display:flex;align-items:center;justify-content:center}
+.try-sign{transition:width .45s cubic-bezier(.2,.7,.2,1)}
+.try-sign.small{width:min(100%,250px)}
+.try-sign.medium{width:min(100%,560px)}
+.try-sign.large{width:min(100%,470px)}
+@media (max-width:600px){.try-stage{min-height:0}}
 /* scroll reveals */
 .js .reveal{opacity:0;transform:translateY(32px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
 .js .reveal.from-left{transform:translateX(-72px)}
@@ -152,7 +178,7 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
 
 <section class="hero">
 <h1 class="sr">Dot Sign App Support</h1>
-<div class="banner"><svg class="dots" viewBox="0 0 65 9" aria-hidden="true" focusable="false" data-kind="text" data-lines="APP SUPPORT" data-x="1" data-y="1" data-step="10" data-color="#23170A" data-i="0"><defs><pattern id="u19" width="1" height="1" patternUnits="userSpaceOnUse"><circle cx=".5" cy=".5" r="0.38" fill="#F4AE62"/></pattern></defs><rect width="65" height="9" fill="url(#u19)"/><path d="M2.5 1.5h0M3.5 1.5h0M4.5 1.5h0M7.5 1.5h0M8.5 1.5h0M9.5 1.5h0M10.5 1.5h0M13.5 1.5h0M14.5 1.5h0M15.5 1.5h0M16.5 1.5h0M24.5 1.5h0M25.5 1.5h0M26.5 1.5h0M27.5 1.5h0M29.5 1.5h0M33.5 1.5h0M35.5 1.5h0M36.5 1.5h0M37.5 1.5h0M38.5 1.5h0M41.5 1.5h0M42.5 1.5h0M43.5 1.5h0M44.5 1.5h0M48.5 1.5h0M49.5 1.5h0M50.5 1.5h0M53.5 1.5h0M54.5 1.5h0M55.5 1.5h0M56.5 1.5h0M59.5 1.5h0M60.5 1.5h0M61.5 1.5h0M62.5 1.5h0M63.5 1.5h0M1.5 2.5h0M5.5 2.5h0M7.5 2.5h0M11.5 2.5h0M13.5 2.5h0M17.5 2.5h0M23.5 2.5h0M29.5 2.5h0M33.5 2.5h0M35.5 2.5h0M39.5 2.5h0M41.5 2.5h0M45.5 2.5h0M47.5 2.5h0M51.5 2.5h0M53.5 2.5h0M57.5 2.5h0M61.5 2.5h0M1.5 3.5h0M5.5 3.5h0M7.5 3.5h0M11.5 3.5h0M13.5 3.5h0M17.5 3.5h0M23.5 3.5h0M29.5 3.5h0M33.5 3.5h0M35.5 3.5h0M39.5 3.5h0M41.5 3.5h0M45.5 3.5h0M47.5 3.5h0M51.5 3.5h0M53.5 3.5h0M57.5 3.5h0M61.5 3.5h0M1.5 4.5h0M2.5 4.5h0M3.5 4.5h0M4.5 4.5h0M5.5 4.5h0M7.5 4.5h0M8.5 4.5h0M9.5 4.5h0M10.5 4.5h0M13.5 4.5h0M14.5 4.5h0M15.5 4.5h0M16.5 4.5h0M24.5 4.5h0M25.5 4.5h0M26.5 4.5h0M29.5 4.5h0M33.5 4.5h0M35.5 4.5h0M36.5 4.5h0M37.5 4.5h0M38.5 4.5h0M41.5 4.5h0M42.5 4.5h0M43.5 4.5h0M44.5 4.5h0M47.5 4.5h0M51.5 4.5h0M53.5 4.5h0M54.5 4.5h0M55.5 4.5h0M56.5 4.5h0M61.5 4.5h0M1.5 5.5h0M5.5 5.5h0M7.5 5.5h0M13.5 5.5h0M27.5 5.5h0M29.5 5.5h0M33.5 5.5h0M35.5 5.5h0M41.5 5.5h0M47.5 5.5h0M51.5 5.5h0M53.5 5.5h0M55.5 5.5h0M61.5 5.5h0M1.5 6.5h0M5.5 6.5h0M7.5 6.5h0M13.5 6.5h0M27.5 6.5h0M29.5 6.5h0M33.5 6.5h0M35.5 6.5h0M41.5 6.5h0M47.5 6.5h0M51.5 6.5h0M53.5 6.5h0M56.5 6.5h0M61.5 6.5h0M1.5 7.5h0M5.5 7.5h0M7.5 7.5h0M13.5 7.5h0M23.5 7.5h0M24.5 7.5h0M25.5 7.5h0M26.5 7.5h0M30.5 7.5h0M31.5 7.5h0M32.5 7.5h0M35.5 7.5h0M41.5 7.5h0M48.5 7.5h0M49.5 7.5h0M50.5 7.5h0M53.5 7.5h0M57.5 7.5h0M61.5 7.5h0" stroke="#23170A" stroke-width="0.76" stroke-linecap="round" fill="none"/></svg></div>
+<div class="banner"><svg class="dots" viewBox="0 0 65 9" aria-hidden="true" focusable="false" data-kind="text" data-lines="APP SUPPORT" data-x="1" data-y="1" data-step="10" data-color="#23170A" data-i="0"><defs><pattern id="u20" width="1" height="1" patternUnits="userSpaceOnUse"><circle cx=".5" cy=".5" r="0.38" fill="#F4AE62"/></pattern></defs><rect width="65" height="9" fill="url(#u20)"/><path d="M2.5 1.5h0M3.5 1.5h0M4.5 1.5h0M7.5 1.5h0M8.5 1.5h0M9.5 1.5h0M10.5 1.5h0M13.5 1.5h0M14.5 1.5h0M15.5 1.5h0M16.5 1.5h0M24.5 1.5h0M25.5 1.5h0M26.5 1.5h0M27.5 1.5h0M29.5 1.5h0M33.5 1.5h0M35.5 1.5h0M36.5 1.5h0M37.5 1.5h0M38.5 1.5h0M41.5 1.5h0M42.5 1.5h0M43.5 1.5h0M44.5 1.5h0M48.5 1.5h0M49.5 1.5h0M50.5 1.5h0M53.5 1.5h0M54.5 1.5h0M55.5 1.5h0M56.5 1.5h0M59.5 1.5h0M60.5 1.5h0M61.5 1.5h0M62.5 1.5h0M63.5 1.5h0M1.5 2.5h0M5.5 2.5h0M7.5 2.5h0M11.5 2.5h0M13.5 2.5h0M17.5 2.5h0M23.5 2.5h0M29.5 2.5h0M33.5 2.5h0M35.5 2.5h0M39.5 2.5h0M41.5 2.5h0M45.5 2.5h0M47.5 2.5h0M51.5 2.5h0M53.5 2.5h0M57.5 2.5h0M61.5 2.5h0M1.5 3.5h0M5.5 3.5h0M7.5 3.5h0M11.5 3.5h0M13.5 3.5h0M17.5 3.5h0M23.5 3.5h0M29.5 3.5h0M33.5 3.5h0M35.5 3.5h0M39.5 3.5h0M41.5 3.5h0M45.5 3.5h0M47.5 3.5h0M51.5 3.5h0M53.5 3.5h0M57.5 3.5h0M61.5 3.5h0M1.5 4.5h0M2.5 4.5h0M3.5 4.5h0M4.5 4.5h0M5.5 4.5h0M7.5 4.5h0M8.5 4.5h0M9.5 4.5h0M10.5 4.5h0M13.5 4.5h0M14.5 4.5h0M15.5 4.5h0M16.5 4.5h0M24.5 4.5h0M25.5 4.5h0M26.5 4.5h0M29.5 4.5h0M33.5 4.5h0M35.5 4.5h0M36.5 4.5h0M37.5 4.5h0M38.5 4.5h0M41.5 4.5h0M42.5 4.5h0M43.5 4.5h0M44.5 4.5h0M47.5 4.5h0M51.5 4.5h0M53.5 4.5h0M54.5 4.5h0M55.5 4.5h0M56.5 4.5h0M61.5 4.5h0M1.5 5.5h0M5.5 5.5h0M7.5 5.5h0M13.5 5.5h0M27.5 5.5h0M29.5 5.5h0M33.5 5.5h0M35.5 5.5h0M41.5 5.5h0M47.5 5.5h0M51.5 5.5h0M53.5 5.5h0M55.5 5.5h0M61.5 5.5h0M1.5 6.5h0M5.5 6.5h0M7.5 6.5h0M13.5 6.5h0M27.5 6.5h0M29.5 6.5h0M33.5 6.5h0M35.5 6.5h0M41.5 6.5h0M47.5 6.5h0M51.5 6.5h0M53.5 6.5h0M56.5 6.5h0M61.5 6.5h0M1.5 7.5h0M5.5 7.5h0M7.5 7.5h0M13.5 7.5h0M23.5 7.5h0M24.5 7.5h0M25.5 7.5h0M26.5 7.5h0M30.5 7.5h0M31.5 7.5h0M32.5 7.5h0M35.5 7.5h0M41.5 7.5h0M48.5 7.5h0M49.5 7.5h0M50.5 7.5h0M53.5 7.5h0M57.5 7.5h0M61.5 7.5h0" stroke="#23170A" stroke-width="0.76" stroke-linecap="round" fill="none"/></svg></div>
 <div class="contact">
 <div class="t">
 <p class="big">Something not right on your sign? Write to me and I'll help.</p>
@@ -188,13 +214,21 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
 <script>
 (() => {
   const RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const RAW = {" ": "000,000,000,000,000,000,000", "A": "01110,10001,10001,11111,10001,10001,10001", "B": "11110,10001,10001,11110,10001,10001,11110", "C": "01110,10001,10000,10000,10000,10001,01110", "D": "11110,10001,10001,10001,10001,10001,11110", "E": "11111,10000,10000,11110,10000,10000,11111", "F": "11111,10000,10000,11110,10000,10000,10000", "G": "01110,10001,10000,10111,10001,10001,01111", "H": "10001,10001,10001,11111,10001,10001,10001", "I": "111,010,010,010,010,010,111", "K": "10001,10010,10100,11000,10100,10010,10001", "L": "10000,10000,10000,10000,10000,10000,11111", "M": "10001,11011,10101,10101,10001,10001,10001", "N": "10001,10001,11001,10101,10011,10001,10001", "O": "01110,10001,10001,10001,10001,10001,01110", "P": "11110,10001,10001,11110,10000,10000,10000", "Q": "01110,10001,10001,10001,10101,10010,01101", "R": "11110,10001,10001,11110,10100,10010,10001", "S": "01111,10000,10000,01110,00001,00001,11110", "T": "11111,00100,00100,00100,00100,00100,00100", "U": "10001,10001,10001,10001,10001,10001,01110", "W": "10001,10001,10001,10101,10101,10101,01010", "Y": "10001,10001,01010,00100,00100,00100,00100", "J": "00111,00010,00010,00010,00010,10010,01100", "V": "10001,10001,10001,10001,10001,01010,00100", "X": "10001,10001,01010,00100,01010,10001,10001", "Z": "11111,00001,00010,00100,01000,10000,11111", "0": "01110,10001,10011,10101,11001,10001,01110", "8": "01110,10001,10001,01110,10001,10001,01110", "1": "00100,01100,00100,00100,00100,00100,01110", "2": "01110,10001,00001,00010,00100,01000,11111", "3": "11111,00010,00100,00010,00001,10001,01110", "4": "00010,00110,01010,10010,11111,00010,00010", "5": "11111,10000,11110,00001,00001,10001,01110", "6": "00110,01000,10000,11110,10001,10001,01110", "7": "11111,00001,00010,00100,01000,01000,01000", "9": "01110,10001,10001,01111,00001,00010,01100", ".": "0,0,0,0,0,0,1", "\u00b7": "0,0,0,1,0,0,0", "'": "1,1,0,0,0,0,0", "/": "00001,00010,00010,00100,01000,01000,10000"}, LINES = {"4": ["#00933C", "#FFFFFF", "4"], "5": ["#00933C", "#FFFFFF", "5"], "6": ["#00933C", "#FFFFFF", "6"], "N": ["#FCCC0A", "#141414", "N"], "Q": ["#FCCC0A", "#141414", "Q"], "R": ["#FCCC0A", "#141414", "R"], "W": ["#FCCC0A", "#141414", "W"], "Blue": ["#00A1DE", "", ""], "Brown": ["#62361B", "", ""], "Green": ["#009B3A", "", ""], "Orange": ["#F9461C", "", ""], "Pink": ["#E27EA6", "", ""], "Purple": ["#522398", "", ""], "LA-A": ["#0072BC", "#FFFFFF", "A"], "LA-B": ["#E3131B", "#FFFFFF", "B"], "LA-D": ["#A05DA5", "#FFFFFF", "D"], "LA-E": ["#FDB913", "#141414", "E"]}, FEEDS = {"ny-up": {"rows": [["4", "WOODLAWN", 1], ["Q", "96 ST", 5], ["6", "PELHAM BAY", 8]], "queue": [["N", "ASTORIA"], ["5", "EASTCHESTER"], ["R", "FOREST HILLS"], ["4", "WOODLAWN"], ["W", "ASTORIA"], ["Q", "96 ST"]]}, "ny-down": {"rows": [["R", "BAY RIDGE", 2], ["4", "CROWN HTS", 6], ["Q", "CONEY ISLAND", 9]], "queue": [["6", "BROOKLYN BR"], ["5", "FLATBUSH AV"], ["W", "WHITEHALL"], ["N", "CONEY ISLAND"], ["R", "BAY RIDGE"], ["4", "CROWN HTS"]]}, "chi": {"rows": [["Blue", "O'HARE", 2], ["Brown", "KIMBALL", 5], ["Green", "HARLEM", 8]], "queue": [["Orange", "MIDWAY"], ["Pink", "54TH/CERMAK"], ["Blue", "O'HARE"], ["Purple", "LINDEN"], ["Brown", "KIMBALL"]]}, "steinway": {"rows": [["R", "95 ST", 1], ["R", "95 ST", 11], ["R", "95 ST", 22]], "queue": [["R", "95 ST"]], "max": 30, "step": [8, 12]}, "la": {"rows": [["LA-D", "LA CIENEGA", 3], ["LA-E", "SANTA MONICA", 7], ["LA-B", "N HOLLYWOOD", 9]], "queue": [["LA-A", "LONG BEACH"], ["LA-E", "ATLANTIC"], ["LA-D", "LA CIENEGA"], ["LA-E", "SANTA MONICA"], ["LA-A", "LONG BEACH"]]}};
+  const RAW = {" ": "000,000,000,000,000,000,000", "A": "01110,10001,10001,11111,10001,10001,10001", "B": "11110,10001,10001,11110,10001,10001,11110", "C": "01110,10001,10000,10000,10000,10001,01110", "D": "11110,10001,10001,10001,10001,10001,11110", "E": "11111,10000,10000,11110,10000,10000,11111", "F": "11111,10000,10000,11110,10000,10000,10000", "G": "01110,10001,10000,10111,10001,10001,01111", "H": "10001,10001,10001,11111,10001,10001,10001", "I": "111,010,010,010,010,010,111", "K": "10001,10010,10100,11000,10100,10010,10001", "L": "10000,10000,10000,10000,10000,10000,11111", "M": "10001,11011,10101,10101,10001,10001,10001", "N": "10001,10001,11001,10101,10011,10001,10001", "O": "01110,10001,10001,10001,10001,10001,01110", "P": "11110,10001,10001,11110,10000,10000,10000", "Q": "01110,10001,10001,10001,10101,10010,01101", "R": "11110,10001,10001,11110,10100,10010,10001", "S": "01111,10000,10000,01110,00001,00001,11110", "T": "11111,00100,00100,00100,00100,00100,00100", "U": "10001,10001,10001,10001,10001,10001,01110", "W": "10001,10001,10001,10101,10101,10101,01010", "Y": "10001,10001,01010,00100,00100,00100,00100", "J": "00111,00010,00010,00010,00010,10010,01100", "V": "10001,10001,10001,10001,10001,01010,00100", "X": "10001,10001,01010,00100,01010,10001,10001", "Z": "11111,00001,00010,00100,01000,10000,11111", "0": "01110,10001,10011,10101,11001,10001,01110", "8": "01110,10001,10001,01110,10001,10001,01110", "1": "00100,01100,00100,00100,00100,00100,01110", "2": "01110,10001,00001,00010,00100,01000,11111", "3": "11111,00010,00100,00010,00001,10001,01110", "4": "00010,00110,01010,10010,11111,00010,00010", "5": "11111,10000,11110,00001,00001,10001,01110", "6": "00110,01000,10000,11110,10001,10001,01110", "7": "11111,00001,00010,00100,01000,01000,01000", "9": "01110,10001,10001,01111,00001,00010,01100", ".": "0,0,0,0,0,0,1", "\u00b7": "0,0,0,1,0,0,0", "'": "1,1,0,0,0,0,0", "/": "00001,00010,00010,00100,01000,01000,10000", "&": "01100,10010,10100,01000,10101,10010,01101"}, LINES = {"4": ["#00933C", "#FFFFFF", "4"], "5": ["#00933C", "#FFFFFF", "5"], "6": ["#00933C", "#FFFFFF", "6"], "N": ["#FCCC0A", "#141414", "N"], "Q": ["#FCCC0A", "#141414", "Q"], "R": ["#FCCC0A", "#141414", "R"], "W": ["#FCCC0A", "#141414", "W"], "Blue": ["#00A1DE", "", ""], "Brown": ["#62361B", "", ""], "Green": ["#009B3A", "", ""], "Orange": ["#F9461C", "", ""], "Pink": ["#E27EA6", "", ""], "Purple": ["#522398", "", ""], "LA-A": ["#0072BC", "#FFFFFF", "A"], "LA-B": ["#E3131B", "#FFFFFF", "B"], "LA-D": ["#A05DA5", "#FFFFFF", "D"], "LA-E": ["#FDB913", "#141414", "E"], "LA-K": ["#E56DB1", "#FFFFFF", "K"], "1": ["#EE352E", "#FFFFFF", "1"], "2": ["#EE352E", "#FFFFFF", "2"], "3": ["#EE352E", "#FFFFFF", "3"], "7": ["#B933AD", "#FFFFFF", "7"], "E": ["#0039A6", "#FFFFFF", "E"], "M": ["#FF6319", "#FFFFFF", "M"], "Red": ["#C60C30", "", ""]}, FEEDS = {"ny-up": {"rows": [["4", "WOODLAWN", 1], ["Q", "96 ST", 5], ["6", "PELHAM BAY", 8]], "queue": [["N", "ASTORIA"], ["5", "EASTCHESTER"], ["R", "FOREST HILLS"], ["4", "WOODLAWN"], ["W", "ASTORIA"], ["Q", "96 ST"]]}, "ny-down": {"rows": [["R", "BAY RIDGE", 2], ["4", "CROWN HTS", 6], ["Q", "CONEY ISLAND", 9]], "queue": [["6", "BROOKLYN BR"], ["5", "FLATBUSH AV"], ["W", "WHITEHALL"], ["N", "CONEY ISLAND"], ["R", "BAY RIDGE"], ["4", "CROWN HTS"]]}, "chi": {"rows": [["Blue", "O'HARE", 2], ["Brown", "KIMBALL", 5], ["Green", "HARLEM", 8]], "queue": [["Orange", "MIDWAY"], ["Pink", "54TH/CERMAK"], ["Blue", "O'HARE"], ["Purple", "LINDEN"], ["Brown", "KIMBALL"]]}, "steinway": {"rows": [["R", "95 ST", 1], ["R", "95 ST", 11], ["R", "95 ST", 22]], "queue": [["R", "95 ST"]], "max": 30, "step": [8, 12]}, "la": {"rows": [["LA-D", "LA CIENEGA", 3], ["LA-E", "SANTA MONICA", 7], ["LA-A", "LONG BEACH", 9]], "queue": [["LA-D", "LA CIENEGA"], ["LA-A", "LONG BEACH"], ["LA-E", "SANTA MONICA"]]}, "court-sq": {"rows": [["7", "HUDSON YDS", 2], ["E", "WORLD TRADE", 4], ["M", "MIDDLE VLG", 7]], "queue": [["7", "HUDSON YDS"], ["E", "WORLD TRADE"], ["7", "HUDSON YDS"], ["M", "MIDDLE VLG"]]}, "boro-hall": {"rows": [["4", "WOODLAWN", 2], ["2", "WAKEFIELD", 4], ["5", "EASTCHESTER", 7]], "queue": [["3", "HARLEM 148"], ["4", "WOODLAWN"], ["2", "WAKEFIELD"], ["5", "EASTCHESTER"]]}, "t-times-up": {"rows": [["1", "242 ST", 1], ["N", "ASTORIA", 3], ["2", "WAKEFIELD", 6]], "queue": [["3", "HARLEM 148"], ["Q", "96 ST"], ["1", "242 ST"], ["W", "ASTORIA"], ["2", "WAKEFIELD"]]}, "t-times-dn": {"rows": [["1", "SOUTH FERRY", 2], ["Q", "CONEY ISLAND", 4], ["3", "NEW LOTS AV", 7]], "queue": [["2", "FLATBUSH AV"], ["R", "BAY RIDGE"], ["1", "SOUTH FERRY"], ["N", "CONEY ISLAND"], ["3", "NEW LOTS AV"]]}, "t-court-q": {"rows": [["7", "FLUSHING", 3], ["E", "JAMAICA CTR", 5], ["M", "FOREST HILLS", 8]], "queue": [["7", "FLUSHING"], ["E", "JAMAICA CTR"], ["7", "FLUSHING"], ["M", "FOREST HILLS"]]}, "t-boro-bk": {"rows": [["2", "FLATBUSH AV", 2], ["3", "NEW LOTS AV", 5], ["4", "CROWN HTS", 8]], "queue": [["5", "FLATBUSH AV"], ["2", "FLATBUSH AV"], ["4", "CROWN HTS"], ["3", "NEW LOTS AV"]]}, "t-stein-q": {"rows": [["R", "FOREST HILLS", 2], ["M", "FOREST HILLS", 6], ["R", "FOREST HILLS", 9]], "queue": [["R", "FOREST HILLS"], ["M", "FOREST HILLS"]]}, "t-belmont-n": {"rows": [["Red", "HOWARD", 2], ["Brown", "KIMBALL", 5], ["Purple", "LINDEN", 9]], "queue": [["Red", "HOWARD"], ["Brown", "KIMBALL"], ["Red", "HOWARD"], ["Purple", "LINDEN"]]}, "t-belmont-s": {"rows": [["Red", "95TH", 1], ["Brown", "LOOP", 4], ["Purple", "LOOP", 8]], "queue": [["Red", "95TH"], ["Brown", "LOOP"], ["Red", "95TH"]]}, "t-damen-oh": {"rows": [["Blue", "O'HARE", 2], ["Blue", "O'HARE", 9], ["Blue", "O'HARE", 17]], "queue": [["Blue", "O'HARE"]], "max": 25, "step": [6, 9]}, "t-damen-fp": {"rows": [["Blue", "FOREST PK", 4], ["Blue", "FOREST PK", 11], ["Blue", "FOREST PK", 19]], "queue": [["Blue", "FOREST PK"]], "max": 25, "step": [6, 9]}, "t-7th-ne": {"rows": [["LA-B", "N HOLLYWOOD", 2], ["LA-E", "ATLANTIC", 5], ["LA-A", "APU/CITRUS", 8]], "queue": [["LA-B", "N HOLLYWOOD"], ["LA-E", "ATLANTIC"], ["LA-A", "APU/CITRUS"]]}, "t-expo-ne": {"rows": [["LA-E", "ATLANTIC", 3], ["LA-E", "ATLANTIC", 11], ["LA-E", "ATLANTIC", 19]], "queue": [["LA-E", "ATLANTIC"]], "max": 25, "step": [6, 9]}, "t-expo-sw": {"rows": [["LA-K", "REDONDO BCH", 1], ["LA-E", "SANTA MONICA", 5], ["LA-K", "REDONDO BCH", 9]], "queue": [["LA-E", "SANTA MONICA"], ["LA-K", "REDONDO BCH"]], "step": [3, 4]}};
   const W = '#F4F0E6', DIM = '#6F6B63', RULE = '#2E2C29', AMB = '#FFA31A', AMB_RULE = '#382406', MB_DIM = '#B9B5AD';
   const TICK = 6500;
   const G = {}; for (const k in RAW) G[k] = RAW[k].split(',');
   const gl = c => G[c] || G[' '];
   const width = t => { t = String(t).toUpperCase(); let w = 0; for (let i = 0; i < t.length; i++) w += gl(t[i])[0].length + (i ? 1 : 0); return w; };
-  const fit = (t, max) => { t = String(t); while (width(t) > max && t.length > 1) t = t.slice(0, -1).trimEnd(); return t; };
+  const ABBR = {"AVENUE": "AV", "AVE": "AV", "STREET": "ST", "PARKWAY": "PKWY", "BOULEVARD": "BLVD", "SQUARE": "SQ", "BRIDGE": "BR", "PARK": "PK", "HEIGHTS": "HTS", "CENTER": "CTR", "JUNCTION": "JCT", "PLAZA": "PLZ", "TERMINAL": "TERM", "STATION": "STA", "BEACH": "BCH", "ROAD": "RD", "PLACE": "PL", "COURT": "CT", "ISLAND": "IS", "EAST": "E", "WEST": "W", "NORTH": "N", "SOUTH": "S", "AIRPORT": "ARPT"};
+  const fit = (t, max) => {
+    t = String(t).toUpperCase().trim();
+    const ab = x => x.split(' ').map(w => ABBR[w] || w).join(' '), first = t.split('-')[0].trim();
+    for (const c of [t, ab(t), first, ab(first)]) if (c && width(c) <= max) return c;
+    let c = ab(first);
+    while (c && width(c) > max) c = c.slice(0, -1);
+    return c.trim();
+  };
 
   function board(w, h) {
     const px = new Map();
@@ -240,46 +274,56 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
   }
 
   // ---- drawing
-  function rowDraw(b, r, y, mono, tc, fk) {
+  // Full Color: warm white text, route colours. Classic LED: one LED colour for everything,
+  // half brightness for secondary text, dark letters on the bullets.
+  const LED = { amber: ['#FFA31A', '#1F1810'], red: ['#FF4B2E', '#21110E'], green: ['#41F57F', '#0F1C13'] };
+  const scale = (hex, f) => '#' + [1, 3, 5].map(i => Math.round(parseInt(hex.slice(i, i + 2), 16) * f).toString(16).padStart(2, '0')).join('');
+  function palette(el) {
+    if (el.dataset.mono !== '1') return { text: W, dim: DIM, rule: RULE, bullet: L => L[0], letter: L => L[1] };
+    const c = (LED[el.dataset.led] || LED.amber)[0];
+    return { text: c, dim: scale(c, 0.5), rule: scale(c, 0.22), bullet: () => c, letter: () => '#141414' };
+  }
+  function rowDraw(b, r, y, P, fk) {
     const L = LINES[r.k];
-    b.bullet(3, y, mono ? AMB : L[0], mono ? '' : L[2], L[1], 'r:' + fk);
-    b.text(r.d, 17, y + 2, tc, 1, 'r:' + fk);
+    b.bullet(3, y, P.bullet(L), L[2], P.letter(L), 'r:' + fk);
+    b.text(r.d, 17, y + 2, P.text, 1, 'r:' + fk);
     const m = String(r.m);
-    b.text(m, 93 - width(m), y + 2, tc, 1, (r.m === 0 ? 'b:' : 'r:') + fk);
+    b.text(m, 93 - width(m), y + 2, P.text, 1, (r.m === 0 ? 'b:' : 'r:') + fk);
   }
   const R = {
     medium(el) {
-      const mono = el.dataset.mono === '1', tc = mono ? AMB : W, fk = el.dataset.feed, s = state[fk];
+      const P = palette(el), fk = el.dataset.feed, s = state[fk];
       const b = board(96, 44);
-      b.text(el.dataset.station, 3, 3, tc);
-      b.hline(3, 92, 13, mono ? AMB_RULE : RULE);
-      rowDraw(b, s.rows[0], 17, mono, tc, fk);
-      rowDraw(b, s.rows[1], 30, mono, tc, fk);
+      b.text(fit(el.dataset.station, 89), 3, 3, P.text);
+      b.hline(3, 92, 13, P.rule);
+      rowDraw(b, s.rows[0], 17, P, fk);
+      rowDraw(b, s.rows[1], 30, P, fk);
       return b;
     },
     small(el) {
-      const fk = el.dataset.feed, [r, r2, r3] = state[fk].rows, L = LINES[r.k], t = 'r:' + fk;
+      const P = palette(el), fk = el.dataset.feed, [r, r2, r3] = state[fk].rows, L = LINES[r.k], t = 'r:' + fk;
       const b = board(56, 56);
-      b.text(fit(el.dataset.station, 50), 3, 2, DIM);
-      b.bullet(3, 12, L[0], L[2], L[1], t);
-      b.text(fit(r.d, 36), 17, 14, W, 1, t);
-      b.text(String(r.m), 3, 26, W, 3, (r.m === 0 ? 'b:' : 'r:') + fk);
-      b.text('MIN', 3 + width(String(r.m)) * 3 + 4, 40, DIM, 1, t);
-      b.text(r2.m + ' · ' + r3.m, 3, 48, DIM, 1, t);
+      b.text(fit(el.dataset.station, 50), 3, 2, P.dim);
+      b.bullet(3, 12, P.bullet(L), L[2], P.letter(L), t);
+      b.text(fit(r.d, 36), 17, 14, P.text, 1, t);
+      b.text(String(r.m), 3, 26, P.text, 3, (r.m === 0 ? 'b:' : 'r:') + fk);
+      b.text('MIN', 3 + width(String(r.m)) * 3 + 4, 40, P.dim, 1, t);
+      b.text(r2.m + ' · ' + r3.m, 3, 48, P.dim, 1, t);
       return b;
     },
     large(el) {
-      const up = el.dataset.feed, dn = el.dataset.feed2, u = state[up].rows, d = state[dn].rows;
+      const P = palette(el), up = el.dataset.feed, dn = el.dataset.feed2, u = state[up].rows, d = state[dn].rows;
       const b = board(96, 92);
-      b.text(el.dataset.station, 3, 3, W);
-      b.hline(3, 92, 13, RULE);
-      b.text('UPTOWN', 3, 17, DIM);
-      b.hline(3, 92, 54, RULE);
-      b.text('DOWNTOWN', 3, 58, DIM);
-      rowDraw(b, u[0], 27, false, W, up); rowDraw(b, u[1], 40, false, W, up);
-      rowDraw(b, d[0], 68, false, W, dn); rowDraw(b, d[1], 81, false, W, dn);
+      b.text(fit(el.dataset.station, 89), 3, 3, P.text);
+      b.hline(3, 92, 13, P.rule);
+      b.text(el.dataset.l1 || 'UPTOWN', 3, 17, P.dim);
+      b.hline(3, 92, 54, P.rule);
+      b.text(el.dataset.l2 || 'DOWNTOWN', 3, 58, P.dim);
+      rowDraw(b, u[0], 27, P, up); rowDraw(b, u[1], 40, P, up);
+      rowDraw(b, d[0], 68, P, dn); rowDraw(b, d[1], 81, P, dn);
       return b;
     },
+    try(el) { return R[el.dataset.size](el); },
     menubar(el) {
       const fk = el.dataset.feed, r = state[fk].rows[0], L = LINES[r.k];
       const b = board(38, 11);
@@ -365,6 +409,43 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
     reveals.forEach(el => io.observe(el));
   } else {
     reveals.forEach(el => el.classList.add('in'));
+  }
+
+  // ---- try it yourself: the same sign, driven by the visitor's choices
+  const trySec = document.getElementById('try');
+  if (trySec) {
+    trySec.hidden = false;
+    const sign = trySec.querySelector('svg[data-kind="try"]'), box = sign.closest('.try-sign');
+    const form = trySec.querySelector('form'), TRYS = [["New York", "Times Sq\u201342 St", "TIMES SQ", [["UPTOWN", "t-times-up"], ["DOWNTOWN", "t-times-dn"]]], ["New York", "Court Sq", "COURT SQ", [["MANHATTAN", "court-sq"], ["QUEENS", "t-court-q"]]], ["New York", "Borough Hall", "BOROUGH HALL", [["MANHATTAN", "boro-hall"], ["BROOKLYN", "t-boro-bk"]]], ["New York", "Steinway St", "STEINWAY", [["MANHATTAN", "steinway"], ["QUEENS", "t-stein-q"]]], ["Chicago", "Belmont", "BELMONT", [["NORTHBOUND", "t-belmont-n"], ["SOUTHBOUND", "t-belmont-s"]]], ["Chicago", "Damen (Blue Line)", "DAMEN", [["TO O'HARE", "t-damen-oh"], ["TO FOREST PARK", "t-damen-fp"]]], ["Los Angeles", "7th St/Metro Center", "7TH ST/METRO", [["NORTH & EAST", "t-7th-ne"], ["SOUTH & WEST", "la"]]], ["Los Angeles", "Expo/Crenshaw", "EXPO/CRENSHAW", [["NORTH & EAST", "t-expo-ne"], ["SOUTH & WEST", "t-expo-sw"]]]];
+    const SIZES = { small: [56, 56], medium: [96, 44], large: [96, 92] };
+    const apply = power => {
+      const f = new FormData(form);
+      const st = TRYS[+f.get('station')], size = f.get('size'), mono = f.get('style') === 'classic', led = f.get('led') || 'amber';
+      form.querySelectorAll('input[name="led"]').forEach(i => { i.disabled = !mono; });
+      const d = sign.dataset;
+      Object.assign(d, { size, station: st[2], feed: st[3][0][1], feed2: size === 'large' ? st[3][1][1] : '',
+                         l1: st[3][0][0], l2: st[3][1][0], mono: mono ? '1' : '0', led });
+      const [w, h] = SIZES[size];
+      sign.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      const rect = sign.querySelector('rect');
+      rect.setAttribute('width', w); rect.setAttribute('height', h);
+      sign.querySelector('pattern circle').setAttribute('fill', mono ? LED[led][1] : '#19191B');
+      box.className = 'sign round try-sign ' + size + (mono ? ' led' : '');
+      sign.setAttribute('aria-label', `${size[0].toUpperCase() + size.slice(1)} ${mono ? 'Classic LED' : 'Full Color'} sign for ${st[1]}.`);
+      if (power && !RM) {
+        sign.classList.add('pre');
+        paint(sign, { boot: 0.5 });
+        requestAnimationFrame(() => requestAnimationFrame(() => sign.classList.remove('pre')));
+      } else paint(sign);
+    };
+    form.addEventListener('change', () => apply(true));
+    form.addEventListener('submit', e => e.preventDefault());
+    trySec.querySelector('#try-next').addEventListener('click', () => {
+      const fk = sign.dataset.feed, s = state[fk];
+      if (s.rows[0].m > 0) { s.rows[0].m = 0; s.departed = false; } else tick(fk);
+      update(fk);
+    });
+    apply(false);
   }
 
   // ---- live countdown, staggered per feed
