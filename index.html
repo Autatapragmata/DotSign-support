@@ -200,7 +200,8 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
 
 <section class="privacy" id="privacy">
 <h2>Privacy</h2>
-<p>Dot Sign has no accounts, ads or analytics. Your location stays on your device and is used only to find the nearest station. To get arrival times, the app asks each transit agency's public feed about the stations you're viewing. Nothing is collected about you.</p>
+<p>Dot Sign has no accounts, ads or analytics, and nothing is used for tracking. Your location stays on your device and is used only to find the nearest station.</p>
+<p>To get arrival times, the app asks Dot Sign's server, which simply passes the request on to the transit agency and hands the answer straight back. Only the station goes out, never your location. Like most web servers, it keeps short-lived technical logs (the request and roughly where it came from) for troubleshooting. They're deleted within a few days and are never linked to you.</p>
 </section>
 
 <footer class="site-foot">
@@ -416,14 +417,14 @@ details p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--sub);max-wi
   if (trySec) {
     trySec.hidden = false;
     const sign = trySec.querySelector('svg[data-kind="try"]'), box = sign.closest('.try-sign');
-    const form = trySec.querySelector('form'), TRYS = [["New York", "Times Sq\u201342 St", "TIMES SQ", [["UPTOWN", "t-times-up"], ["DOWNTOWN", "t-times-dn"]]], ["New York", "Court Sq", "COURT SQ", [["MANHATTAN", "court-sq"], ["QUEENS", "t-court-q"]]], ["New York", "Borough Hall", "BOROUGH HALL", [["MANHATTAN", "boro-hall"], ["BROOKLYN", "t-boro-bk"]]], ["New York", "Steinway St", "STEINWAY", [["MANHATTAN", "steinway"], ["QUEENS", "t-stein-q"]]], ["Chicago", "Belmont", "BELMONT", [["NORTHBOUND", "t-belmont-n"], ["SOUTHBOUND", "t-belmont-s"]]], ["Chicago", "Damen (Blue Line)", "DAMEN", [["TO O'HARE", "t-damen-oh"], ["TO FOREST PARK", "t-damen-fp"]]], ["Los Angeles", "7th St/Metro Center", "7TH ST/METRO", [["NORTH & EAST", "t-7th-ne"], ["SOUTH & WEST", "la"]]], ["Los Angeles", "Expo/Crenshaw", "EXPO/CRENSHAW", [["NORTH & EAST", "t-expo-ne"], ["SOUTH & WEST", "t-expo-sw"]]]];
+    const form = trySec.querySelector('form'), TRYS = [["New York", "Times Sq\u201342 St", "TIMES SQ", [["UPTOWN", "t-times-up"], ["DOWNTOWN", "t-times-dn"]]], ["New York", "Court Sq", "COURT SQ", [["MANHATTAN", "court-sq"], ["QUEENS", "t-court-q"]]], ["New York", "Borough Hall", "BOROUGH HALL", [["MANHATTAN", "boro-hall"], ["BROOKLYN", "t-boro-bk"]]], ["New York", "Steinway St", "STEINWAY", [["MANHATTAN", "steinway"], ["QUEENS", "t-stein-q"]]], ["Chicago", "Belmont", "BELMONT", [["NORTHBOUND", "t-belmont-n"], ["SOUTHBOUND", "t-belmont-s"]]], ["Chicago", "Damen (Blue Line)", "DAMEN", [["TO O'HARE", "t-damen-oh"], ["TO FOREST PARK", "t-damen-fp"]]], ["Los Angeles", "7th St/Metro Center", "7TH ST/METRO", [["NORTH & EAST", "t-7th-ne"], ["SOUTH & WEST", "la"]]], ["Los Angeles", "Expo/Crenshaw", "EXPO/CRENSHAW", [["NORTH & EAST", "t-expo-ne"], ["SOUTH & WEST", "t-expo-sw"]], "t-expo-sw"]];
     const SIZES = { small: [56, 56], medium: [96, 44], large: [96, 92] };
     const apply = power => {
       const f = new FormData(form);
       const st = TRYS[+f.get('station')], size = f.get('size'), mono = f.get('style') === 'classic', led = f.get('led') || 'amber';
       form.querySelectorAll('input[name="led"]').forEach(i => { i.disabled = !mono; });
       const d = sign.dataset;
-      Object.assign(d, { size, station: st[2], feed: st[3][0][1], feed2: size === 'large' ? st[3][1][1] : '',
+      Object.assign(d, { size, station: st[2], feed: size === 'large' ? st[3][0][1] : (st[4] || st[3][0][1]), feed2: size === 'large' ? st[3][1][1] : '',
                          l1: st[3][0][0], l2: st[3][1][0], mono: mono ? '1' : '0', led });
       const [w, h] = SIZES[size];
       sign.setAttribute('viewBox', `0 0 ${w} ${h}`);
